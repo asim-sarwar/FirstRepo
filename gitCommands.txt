@@ -1,0 +1,16 @@
+git config --global user.name "asim"  (Set username globaly)
+
+git config --global user.email "asim.softwareengg@gmail.com"  (Set email globaly)
+
+
+git add --all; git add .  (add all files to index cache.)
+git add fileName (add specfic file with its name to index cache).
+
+
+git rm --cached fileName (Remove or revert/back file from index cache.)
+
+git commit -m "comments"   ()
+
+git log   (show all history of all commits)
+
+
