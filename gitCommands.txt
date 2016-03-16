@@ -1,3 +1,16 @@
+https://guides.github.com/activities/hello-world/
+Git Data Flow:
+
+		Remote repositry  => git hub repo
+		pull fetch push
+			Local repositry
+				commit
+			Index (cache) => staging area
+			checkout Head	add
+		Working directory	
+
+
+
 git config --global user.name "asim"  (Set username globaly)
 
 git config --global user.email "asim.softwareengg@gmail.com"  (Set email globaly)
@@ -10,7 +23,49 @@ git add fileName (add specfic file with its name to index cache).
 git rm --cached fileName (Remove or revert/back file from index cache.)
 
 git commit -m "comments"   ()
+git commit -a -m "comments"
 
-git log   (show all history of all commits)
+git log   (show all history of all commits as desc order)
+	When u use this command. if there is multiple logs then for exist just use 'shift + ZZ'.
+
+git log --oneline (see commits history in short form.)
+		136751f start tracking gitCommands.txt
+		2cc276d initial commits
 
 
+git diff   (Show following suppose you made some modification in gitCommands.txt file) :
+		This command run and show results only when the modified file has not been add to index cached. If the file has been added to index cache then use 'git diff --cached' command after run 'add' commands.
+
+
+		diff --git a/gitCommands.txt b/gitCommands.txt
+		index 3b38167..4b671a6 100644
+		--- a/gitCommands.txt
+		+++ b/gitCommands.txt
+		@@ -11,6 +11,6 @@ git rm --cached fileName (Remove or revert/back file from index cache.)
+
+		 git commit -m "comments"   ()
+
+		-git log   (show all history of all commits)
+		+git log   (show all history of all commits as desc order)
+
+
+git status
+	modified gitCommands.txt
+git status -s   (shorthand)
+ 	M gitCommands.txt
+
+SSH KEY (you see after sign up on git hub under settings tab or option):
+
+	If u use git bash, u will need to set this up manually. And if u use windows git client, it will do it automatically when u login first time.
+	RSA key is a public and private key. The private key will be on ur computer and u will add the public key to GitHub. Once it done, GitHub will trust ur computer to upload code.
+
+ssh-keygen -t rsa -C "asim.softwareengg@gmail.com"   (after signup on github, generate ssh key and then past this key on github account)
+
+ssh -T git@github.com  (check ur ssh key added to github)
+	The authenticity of host 'github.com (192.30.252.131)' can't be established.
+	RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+	Are you sure you want to continue connecting (yes/no)? yes
+	Warning: Permanently added 'github.com,192.30.252.131' (RSA) to the list of known hosts.
+	Enter passphrase for key '/c/Users/Jasim sarwar/.ssh/id_rsa':
+	Hi asim-sarwar! You've successfully authenticated, but GitHub does not provide shell access.
+	
